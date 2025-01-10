@@ -17,3 +17,4 @@ whitenoise==6.8.2
 python-dotenv==1.0.1
 requests==2.32.3
 paypalrestsdk==1.13.3
+pillow==11.1.0
