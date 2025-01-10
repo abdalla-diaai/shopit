@@ -1,0 +1,48 @@
+.col {
+    margin-bottom: 1rem;
+};
+
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    border-radius: 0.25rem;
+};
+
+.cardImgWrapper {
+    width: 100%;
+    padding: 0.5rem;
+};
+
+.cardImgTop {
+    width: 100%;
+    border-top-left-radius: calc(0.25rem - 1px);
+    border-top-right-radius: calc(0.25rem - 1px);
+};
+
+.cardBody {
+
+    flex: 1 1 auto;
+    padding: 1.25rem;
+    font-size: 1rem;
+    color: black;
+    margin-bottom: 0.5rem;
+};
+
+.cardTitle {
+    font-size: 1rem;
+    color: black;
+    margin-bottom: 0.5rem;
+};
+
+.cardText {
+    font-size: 0.875rem;
+    color: black;
+    margin-bottom: 0.5rem;
+
+};
