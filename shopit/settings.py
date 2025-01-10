@@ -169,13 +169,15 @@ SIMPLE_JWT = {
 }
 
 
-dotenv_path = Path('../.env')
+# dotenv_path = Path('../.env')
 
-# Load the client id and secret key from the .env file
+# # Load the client id and secret key from the .env file
+# load_dotenv(dotenv_path=dotenv_path)
+
+dotenv_path = BASE_DIR / '.env'
 load_dotenv(dotenv_path=dotenv_path)
+
 PAYPAL_CLIENT_ID = os.getenv("PAYPAL_CLIENT_ID")
 PAYPAL_CLIENT_SECRET = os.getenv("PAYPAL_CLIENT_SECRET")
 PAYPAL_MODE = 'sandbox' # or live when ready for production
-
-load_dotenv()
 REACT_BASE_URL = os.getenv("REACT_BASE_URL", "http://localhost:5173")
