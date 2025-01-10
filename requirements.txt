@@ -67,7 +67,6 @@ pyhtml2md==1.6.0
 PyJWT==2.10.1
 pynput==1.7.7
 pyobjc==10.3.2
-pyobjc-core==10.3.2
 pyobjc-framework-Accessibility==10.3.2
 pyobjc-framework-Accounts==10.3.2
 pyobjc-framework-AddressBook==10.3.2
