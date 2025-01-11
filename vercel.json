@@ -4,13 +4,15 @@
     {
       "src": "shopit/wsgi.py",
       "use": "@vercel/python",
-      "config": { "maxLambdaSize": "15mb" }
+      "config": {
+        "maxLambdaSize": "15mb"
+      }
     },
     {
       "src": "build.sh",
       "use": "@vercel/static-build",
       "config": {
-          "distDir": "staticfiles_build"
+        "distDir": "staticfiles_build"
       }
     }
   ],
@@ -19,9 +21,15 @@
       "src": "/static/(.*)",
       "dest": "/static/$1"
     },
-  {
+    {
       "src": "/(.*)",
       "dest": "shopit/wsgi.py"
-  }
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/"
+    }
   ]
 }
