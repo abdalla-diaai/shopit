@@ -17,8 +17,8 @@ paypalrestsdk.configure({
     "client_secret": settings.PAYPAL_CLIENT_SECRET,
 })
 # Create your views here.
-def index(request):
-    return render(request, "shopping/index.html")
+# def index(request):
+#     return render(request, "shopping/index.html")
 
 @decorators.api_view(['GET'])
 def products(request):
