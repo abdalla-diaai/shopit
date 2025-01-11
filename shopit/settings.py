@@ -28,7 +28,9 @@ SECRET_KEY = "django-insecure-*-4n!3fo8x-iw=v2%6&u(=7e7+^nob4a4izwr-awn*uu7h#)vn
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["shopit-h2ay.onrender.com", "localhost", "127.0.0.1"]
+# ALLOWED_HOSTS = ["shopit-h2ay.onrender.com", "localhost", "127.0.0.1"]
+
+ALLOWED_HOSTS = [".vercel.app", ".now.sh", "localhost", "127.0.0.1"] #vercel deployment
 
 
 # Application definition
@@ -84,13 +86,23 @@ WSGI_APPLICATION = "shopit.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+# DATABASES = {
+#     "default": {
+#         "ENGINE": "django.db.backends.sqlite3",
+#         "NAME": BASE_DIR / "db.sqlite3",
+#     }
+# }
+
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": "railway",
+        "USER": "postgres",
+        "PASSWORD": "ToEGTKhRFjVJlDNaopdNlOWypETSTNxy",
+        "HOST": "autorack.proxy.rlwy.net",
+        "PORT": "49191",
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
@@ -128,10 +140,12 @@ USE_TZ = True
 STATIC_URL = "static/"
 # Configure static files storage
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
-STATIC_ROOT = BASE_DIR / "staticfiles"
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles_build", "static")
 MEDIA_URL = "media/"
 MEDIA_ROOT = BASE_DIR / "media"
 
+STATICFILES_DIRS = [BASE_DIR / "static"]
+STATICFILES_DIRS = os.path.join(BASE_DIR, "static"),
 
 
 # Default primary key field type
