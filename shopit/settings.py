@@ -30,7 +30,12 @@ DEBUG = True
 
 # ALLOWED_HOSTS = ["shopit-h2ay.onrender.com", "localhost", "127.0.0.1"]
 
-ALLOWED_HOSTS = [".vercel.app", ".now.sh", "localhost", "127.0.0.1"] #vercel deployment
+ALLOWED_HOSTS = [
+    ".vercel.app",
+    ".now.sh",
+    "localhost",
+    "127.0.0.1",
+]  # vercel deployment
 
 
 # Application definition
@@ -144,8 +149,10 @@ STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles_build", "static")
 MEDIA_URL = "media/"
 MEDIA_ROOT = BASE_DIR / "media"
 
-STATICFILES_DIRS = [BASE_DIR / "static"]
-STATICFILES_DIRS = os.path.join(BASE_DIR, "static"),
+STATICFILES_DIRS = [
+    BASE_DIR / "static",
+]
+STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"),)
 
 
 # Default primary key field type
