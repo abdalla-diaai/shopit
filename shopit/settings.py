@@ -28,7 +28,7 @@ SECRET_KEY = "django-insecure-*-4n!3fo8x-iw=v2%6&u(=7e7+^nob4a4izwr-awn*uu7h#)vn
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["shopit-925o.onrender.com", "localhost", "127.0.0.1"]
+ALLOWED_HOSTS = ["shopit-925o.onrender.com"]
 
 
 # Application definition
@@ -55,7 +55,6 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     "corsheaders.middleware.CorsMiddleware",
-    "django.middleware.common.CommonMiddleware",
     "whitenoise.middleware.WhiteNoiseMiddleware",
 
 ]
@@ -127,7 +126,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 STATIC_ROOT = BASE_DIR / "staticfiles"
 STATIC_URL = "static/"
-MEDIA_URL = "img/"
+MEDIA_URL = "media/"
 MEDIA_ROOT = BASE_DIR / "media"
 
 # STORAGES = {
