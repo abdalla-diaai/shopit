@@ -25,11 +25,5 @@
       "src": "/(.*)",
       "dest": "shopit/wsgi.py"
     }
-  ],
-  "rewrites": [
-    {
-      "source": "/(.*)",
-      "destination": "/"
-    }
   ]
 }
