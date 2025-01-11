@@ -30,6 +30,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ["shopit-j17g.onrender.com", "localhost", "127.0.0.1"]
 
+CORS_ALLOW_ALL_ORIGINS = True
 
 # Application definition
 
@@ -63,7 +64,7 @@ ROOT_URLCONF = "shopit.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
+        "DIRS": [BASE_DIR / 'templates',],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
