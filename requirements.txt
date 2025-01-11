@@ -5,3 +5,4 @@ paypalrestsdk==1.13.3
 python-dotenv==1.0.1
 Requests==2.32.3
 django-cors-headers==4.6.0
+pillow==11.1.0
