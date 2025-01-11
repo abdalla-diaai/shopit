@@ -31,7 +31,7 @@ DEBUG = False
 
 # ALLOWED_HOSTS = ["shopit-h2ay.onrender.com", "localhost", "127.0.0.1"]
 
-ALLOWED_HOSTS = [".vercel.app", ".now.sh", "localhost", "127.0.0.1", "https://shopit-h2ay.onrender.com"] #vercel deployment
+ALLOWED_HOSTS = [".vercel.app", ".now.sh", "localhost", "127.0.0.1", "shopit-h2ay.onrender.com"] #vercel deployment
 
 
 # Application definition
