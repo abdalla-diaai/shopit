@@ -14,7 +14,6 @@ from pathlib import Path
 from datetime import timedelta
 from dotenv import load_dotenv
 import os
-import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -28,8 +27,6 @@ SECRET_KEY = "django-insecure-*-4n!3fo8x-iw=v2%6&u(=7e7+^nob4a4izwr-awn*uu7h#)vn
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
-
-# ALLOWED_HOSTS = ["shopit-h2ay.onrender.com", "localhost", "127.0.0.1"]
 
 ALLOWED_HOSTS = [
     ".vercel.app",
@@ -94,39 +91,18 @@ WSGI_APPLICATION = "shopit.wsgi.application"
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 # Replace the SQLite DATABASES configuration with PostgreSQL:
 
-# DATABASES = {
-#     'default': dj_database_url.config(
-#         # Replace this value with your local database's connection string.
-#         default='postgresql://postgres:postgres@localhost:5432/shopit',
-#         conn_max_age=600
-#     )
-# }
+# vercel deployment
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": "railway",
+        "USER": "postgres",
+        "PASSWORD": "IoOmqEtaPgKwFKWYpQEGsjTkdXUPLEaU",
+        "HOST": "autorack.proxy.rlwy.net",
+        "PORT": "47430",
     }
 }
-
-# else :
-#     DATABASES = {
-#     "default": dj_database_url.parse(os.getenv("DATABASE_URL"))
-
-#     }
-
-# vercel deployment
-
-# DATABASES = {
-#     "default": {
-#         "ENGINE": "django.db.backends.postgresql",
-#         "NAME": "railway",
-#         "USER": "postgres",
-#         "PASSWORD": "IoOmqEtaPgKwFKWYpQEGsjTkdXUPLEaU",
-#         "HOST": "autorack.proxy.rlwy.net",
-#         "PORT": "47430",
-#     }
-# }
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
@@ -163,20 +139,13 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 STATIC_URL = "static/"
 # Configure static files storage
-# STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
-# STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles_build", "static")
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles_build", "static")
 MEDIA_URL = "media/"
 MEDIA_ROOT = BASE_DIR / "media"
 
-# STATICFILES_DIRS = [BASE_DIR / "static"]
-# STATICFILES_DIRS = os.path.join(BASE_DIR, "static"),
-# This production code might break development mode, so we check whether we're in DEBUG mode
-if not DEBUG:
-    # Tell Django to copy static assets into a path called `staticfiles` (this is specific to Render)
-    STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
-    # Enable the WhiteNoise storage backend, which compresses static files to reduce disk use
-    # and renames the files with unique names for each version to support long-term caching
-    STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+STATICFILES_DIRS = [BASE_DIR / "static"]
+STATICFILES_DIRS = os.path.join(BASE_DIR, "static"),
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
