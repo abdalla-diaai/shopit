@@ -154,6 +154,7 @@ STATICFILES_DIRS = [
 ]
 STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"),)
 
+if os.environ.get('ENVIRONMENT') == 'production': MEDIA_ROOT = '/tmp/media' # Use a writable temporary directory
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
