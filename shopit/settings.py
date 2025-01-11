@@ -26,15 +26,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "django-insecure-*-4n!3fo8x-iw=v2%6&u(=7e7+^nob4a4izwr-awn*uu7h#)vn"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = [
-    ".vercel.app",
-    ".now.sh",
-    "localhost",
-    "127.0.0.1",
-    "shopit-rlem.onrender.com",
-]  # vercel deployment
+# ALLOWED_HOSTS = ["shopit-h2ay.onrender.com", "localhost", "127.0.0.1"]
+
+ALLOWED_HOSTS = [".vercel.app", ".now.sh", "localhost", "127.0.0.1"] #vercel deployment
 
 
 # Application definition
@@ -89,9 +85,13 @@ WSGI_APPLICATION = "shopit.wsgi.application"
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
-# Replace the SQLite DATABASES configuration with PostgreSQL:
 
-# vercel deployment
+# DATABASES = {
+#     "default": {
+#         "ENGINE": "django.db.backends.sqlite3",
+#         "NAME": BASE_DIR / "db.sqlite3",
+#     }
+# }
 
 DATABASES = {
     "default": {
@@ -146,6 +146,7 @@ MEDIA_ROOT = BASE_DIR / "media"
 
 STATICFILES_DIRS = [BASE_DIR / "static"]
 STATICFILES_DIRS = os.path.join(BASE_DIR, "static"),
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
