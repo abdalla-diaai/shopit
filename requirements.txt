@@ -9,3 +9,4 @@ pillow==11.1.0
 whitenoise==6.8.2
 gunicorn==23.0.0
 psycopg==3.2.3
+psycopg2-binary==2.9.10
