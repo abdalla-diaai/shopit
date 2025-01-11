@@ -88,13 +88,13 @@ WSGI_APPLICATION = "shopit.wsgi.application"
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 # Replace the SQLite DATABASES configuration with PostgreSQL:
 
-DATABASES = {
-    'default': dj_database_url.config(
-        # Replace this value with your local database's connection string.
-        default='postgresql://postgres:postgres@localhost:5432/shopit',
-        conn_max_age=600
-    )
-}
+# DATABASES = {
+#     'default': dj_database_url.config(
+#         # Replace this value with your local database's connection string.
+#         default='postgresql://postgres:postgres@localhost:5432/shopit',
+#         conn_max_age=600
+#     )
+# }
 
 # if DEBUG == True :
 #     DATABASES = {
@@ -112,16 +112,16 @@ DATABASES = {
 
 # vercel deployment
 
-# DATABASES = {
-#     "default": {
-#         "ENGINE": "django.db.backends.postgresql",
-#         "NAME": "railway",
-#         "USER": "postgres",
-#         "PASSWORD": "IoOmqEtaPgKwFKWYpQEGsjTkdXUPLEaU",
-#         "HOST": "autorack.proxy.rlwy.net",
-#         "PORT": "47430",
-#     }
-# }
+DATABASES = {
+    "default": {
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": "railway",
+        "USER": "postgres",
+        "PASSWORD": "IoOmqEtaPgKwFKWYpQEGsjTkdXUPLEaU",
+        "HOST": "autorack.proxy.rlwy.net",
+        "PORT": "47430",
+    }
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
