@@ -128,12 +128,6 @@ STATIC_URL = "static/"
 MEDIA_URL = "media/"
 MEDIA_ROOT = BASE_DIR / "media"
 
-# STORAGES = {
-#     "staticfiles": {
-#         "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
-#     },
-# }
-
 # Configure static files storage
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
@@ -151,7 +145,6 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:5174",
     "http://localhost:5175",
     "http://127.0.0.1:9000",
-    "https://shopit-frontend-3fhp.onrender.com",
 ]
 
 REST_FRAMEWORK = {
