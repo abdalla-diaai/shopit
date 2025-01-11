@@ -26,9 +26,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "django-insecure-*-4n!3fo8x-iw=v2%6&u(=7e7+^nob4a4izwr-awn*uu7h#)vn"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ["shopit-j17g.onrender.com", "shopit-031m.onrender.com","localhost", "127.0.0.1"]
+ALLOWED_HOSTS = ["shopit-j17g.onrender.com", "localhost", "127.0.0.1"]
 
 
 # Application definition
@@ -161,12 +161,6 @@ REST_FRAMEWORK = {
 SIMPLE_JWT = {
     "ACCESS_TOKEN_LIFETIME": timedelta(minutes=60),
 }
-
-
-# dotenv_path = Path('../.env')
-
-# # Load the client id and secret key from the .env file
-# load_dotenv(dotenv_path=dotenv_path)
 
 load_dotenv(dotenv_path=BASE_DIR / ".env")
 
